@@ -4,9 +4,11 @@ $(document).ready(function () {
 
 ///// Initial State	/////
 $("[id$='-dark']").toggle();
-$("#face-peaceful").toggle();
-$("#face-whatever").toggle();
-$("#face-rockin").toggle();
+$("#girl-container-headbanger1").toggle();
+$("#girl-container-headbanger2").toggle();
+$("#girl-container-headbanger3").toggle();
+$("#girl-container-headbanger-trans1").toggle();
+$("#girl-container-headbanger-trans2").toggle();
 
 ///// Lavalamp Controls /////
 var firstLoad = true;
@@ -113,7 +115,6 @@ var bbColours = ["#B1B3B5", "#FFFF00", "#00FF00", "#FF0000"];
 var bbSongs  = ["", "light", "medium", "heavy"];
 var bbSongTempo = [0, 333, 300, 375];
 var bbSongStrength = ["1", "1.05", "1.1", "1.2"];
-var bbFaces = ["#face-normal", "#face-peaceful", "#face-whatever", "#face-rockin"];
 
 var sound = new Howl({
   src: ['audio/SimpleRoom_Songs.mp3'],
@@ -142,16 +143,11 @@ function boomboxHandler(){
 	tuner.animate({transform: "t"+ChannelPos[Channel]+",0"}, 700, mina.easein, function(){
 		sound.play(bbSongs[Channel]);
 
-		for (var i = 0; i < bbFaces.length; i++){
-			if (i !== Channel){
-				$(bbFaces[i]).hide();
-			} else {
-				$(bbFaces[i]).show();
-			}
-		}
+		
 		// re-add event after animation takes place
 		$("#boombox-container").on("click", boomboxHandler);
 		animateSpeakers();
+		animateGirl();
 	});
 }
 
@@ -181,6 +177,13 @@ function animateSpeakers(){
 		});
 	}
 
+}
+
+function animateGirl(){
+	var transSpeed = 1;
+
+	$("#girl-container-headbanger-trans1").toggle();
+	
 }
 ///// Boombox Functions :: END /////
 
