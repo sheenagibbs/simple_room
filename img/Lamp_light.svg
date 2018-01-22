@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Generator: Adobe Illustrator 14.0.0, SVG Export Plug-In  -->
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd" [
+	<!ENTITY ns_flows "http://ns.adobe.com/Flows/1.0/">
+]>
+<svg version="1.1"
+	 xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:a="http://ns.adobe.com/AdobeSVGViewerExtensions/3.0/"
+	 x="0px" y="0px" width="467px" height="570px" viewBox="0 0 467 570" enable-background="new 0 0 467 570" xml:space="preserve">
+<defs>
+</defs>
+<polygon fill="#9DEDE4" points="273.131,0 193.869,0 0,570 240.997,570 270.896,570 467,570 "/>
+<circle display="none" fill="#999999" cx="207.385" cy="99.439" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="104.659" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="109.879" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="115.098" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="120.318" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="125.538" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="130.758" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="135.978" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="141.197" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="146.417" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="151.637" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="156.857" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="162.077" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="167.297" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="172.517" r="2.79"/>
+<circle display="none" fill="#999999" cx="207.385" cy="181.949" r="7.001"/>
+<path display="none" fill="#FFFFFF" d="M162.069,570c0-6.867,31.8-12.432,71.028-12.432s71.028,5.564,71.028,12.432H162.069z"/>
+<rect x="225.197" y="106.42" display="none" fill="#FFFFFF" width="15.8" height="457.364"/>
+<polygon display="none" fill="#079FFF" points="320.227,140.07 145.967,140.07 193.062,0 273.131,0 "/>
+</svg>
