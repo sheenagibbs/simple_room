@@ -7,8 +7,8 @@ $("[id$='-dark']").toggle();
 $("#girl-container-headbanger1").toggle();
 $("#girl-container-headbanger2").toggle();
 $("#girl-container-headbanger3").toggle();
-$("#girl-container-headbanger-trans1").toggle();
-$("#girl-container-headbanger-trans2").toggle();
+$("#girl-container-headbanger4").toggle();
+$("#girl-container-headbanger5").toggle();
 
 ///// Lavalamp Controls /////
 var firstLoad = true;
@@ -180,10 +180,28 @@ function animateSpeakers(){
 }
 
 function animateGirl(){
-	var transSpeed = 1;
+	// DANCE PATTERN //
+	// trans in  1, 2 
+	// dance     3,4,5,4
+	// trans out 2, 1
+	var transSpeed = 200;
+	var sequence = [1, 2, 3, 4, 5, 4];
+	var counter = 0;
+	var transIn = false;
 
-	$("#girl-container-headbanger-trans1").toggle();
-	
+	$("#girl-container-default").toggle();
+	$("#girl-container-headbanger"+sequence[counter]).toggle();
+	var loopInterval = setInterval(headbang, transSpeed);
+
+	function headbang(){
+		$("#girl-container-headbanger"+sequence[counter]).toggle();
+		counter = counter + 1;
+		if (counter >= sequence.length){
+
+			counter = 2;
+		}
+		$("#girl-container-headbanger"+sequence[counter]).toggle();		
+	}
 }
 ///// Boombox Functions :: END /////
 
