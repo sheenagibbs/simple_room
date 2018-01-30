@@ -4,11 +4,11 @@ $(document).ready(function () {
 
 ///// Initial State	/////
 $("[id$='-dark']").toggle();
-$("#girl-container-headbanger1").toggle();
-$("#girl-container-headbanger2").toggle();
-$("#girl-container-headbanger3").toggle();
-$("#girl-container-headbanger4").toggle();
-$("#girl-container-headbanger5").toggle();
+$("#headbang1").toggle();
+$("#headbang2").toggle();
+$("#headbang3").toggle();
+$("#headbang4").toggle();
+$("#headbang5").toggle();
 
 ///// Lavalamp Controls /////
 var firstLoad = true;
@@ -116,6 +116,53 @@ var bbSongs  = ["", "light", "medium", "heavy"];
 var bbSongTempo = [0, 333, 300, 375];
 var bbSongStrength = ["1", "1.05", "1.1", "1.2"];
 
+var danceObjs = [
+	{ // No Dancing
+		channelPos: 0,
+		bbColour: "#B1B3B5",  // Grey
+		bbSong: "",
+		bbSongTempo: 0,
+		bbSongStrength: "1"
+	},
+	{ // Soft Dance
+		channelPos: 20,
+		bbColour: "#00FF00",  // Yellow
+		bbSong: "light",
+		bbSongTempo: 333,
+		bbSongStrength: "1.05",
+		danceEl: "headbang",
+		danceTransIn: [1, 2],
+		danceSequence: [3, 4, 5, 4],
+		danceTransOut: [2, 1],
+		danceSpeed: 500
+	},
+	{ // Medium Dance
+		channelPos: 40,
+		bbColour: "#00FF00",  // Green
+		bbSong: "medium",
+		bbSongTempo: 300,
+		bbSongStrength: "1.1",
+		danceEl: "headbang",
+		danceTransIn: [1, 2],
+		danceSequence: [3, 4, 5, 4],
+		danceTransOut: [2, 1],
+		danceSpeed: 300
+	},
+	{ // Heavy Dance
+		channelPos: 75,
+		bbColour: "#ff0000",  // Red
+		bbSong: "heavy",
+		bbSongTempo: 375,
+		bbSongStrength: "1.2",
+		danceEl: "headbang",
+		danceTransIn: [1, 2],
+		danceSequence: [3, 4, 5, 4],
+		danceTransOut: [2, 1],
+		danceSpeed: 200
+	}
+]
+
+
 var sound = new Howl({
   src: ['audio/SimpleRoom_Songs.mp3'],
   sprite: {
@@ -160,22 +207,26 @@ function animateSpeakers(){
 		});
 		
 	} else {
-		var leftTransUp = "s"+bbSongStrength[Channel]+","+speakerLCenterX+","+speakerLCenterY;
+		var leftTransUp = "s"+danceObjs[Channel].bbSongStrength+","+speakerLCenterX+","+speakerLCenterY;
 		var leftTransDown = "s1,"+speakerLCenterX+","+speakerLCenterY;
-		var rightTransUp = "s"+bbSongStrength[Channel]+","+speakerRCenterX+","+speakerRCenterY;
+		var rightTransUp = "s"+danceObjs[Channel].bbSongStrength+","+speakerRCenterX+","+speakerRCenterY;
 		var rightTransDown = "s1,"+speakerRCenterX+","+speakerRCenterY;
 
 		// LEFT
-		speakerL.animate({transform: leftTransUp}, bbSongTempo[Channel], mina.easeout, function(){
-			speakerL.animate({transform: leftTransDown}, bbSongTempo[Channel], mina.easeout);
+		speakerL.animate({transform: leftTransUp}, danceObjs[Channel].bbSongTempo, mina.easeout, function(){
+			speakerL.animate({transform: leftTransDown}, danceObjs[Channel].bbSongTempo, mina.easeout);
 		});
 		// RIGHT
-		speakerR.animate({transform: rightTransUp}, bbSongTempo[Channel], mina.easeout, function(){
-			speakerR.animate({transform: rightTransDown}, bbSongTempo[Channel], mina.easeout, function(){
+		speakerR.animate({transform: rightTransUp}, danceObjs[Channel].bbSongTempo, mina.easeout, function(){
+			speakerR.animate({transform: rightTransDown}, danceObjs[Channel].bbSongTempo, mina.easeout, function(){
 				animateSpeakers();
 			});
 		});
 	}
+
+}
+
+function animateDance(){
 
 }
 
@@ -190,17 +241,17 @@ function animateGirl(){
 	var transIn = false;
 
 	$("#girl-container-default").toggle();
-	$("#girl-container-headbanger"+sequence[counter]).toggle();
+	$("#headbang"+sequence[counter]).toggle();
 	var loopInterval = setInterval(headbang, transSpeed);
 
 	function headbang(){
-		$("#girl-container-headbanger"+sequence[counter]).toggle();
+		$("#headbang"+sequence[counter]).toggle();
 		counter = counter + 1;
 		if (counter >= sequence.length){
 
 			counter = 2;
 		}
-		$("#girl-container-headbanger"+sequence[counter]).toggle();		
+		$("#headbang"+sequence[counter]).toggle();		
 	}
 }
 ///// Boombox Functions :: END /////
