@@ -4,11 +4,10 @@ $(document).ready(function () {
 
 ///// Initial State	/////
 $("[id$='-dark']").toggle();
-$("#headbang1").toggle();
-$("#headbang2").toggle();
-$("#headbang3").toggle();
-$("#headbang4").toggle();
-$("#headbang5").toggle();
+$("[id^='light-").toggle();
+$("[id^='medium-").toggle();
+$("[id^='heavy-").toggle();
+
 
 ///// Lavalamp Controls /////
 var firstLoad = true;
@@ -130,9 +129,9 @@ var danceObjs = [
 		bbSong: "light",
 		bbSongTempo: 333,
 		bbSongStrength: "1.05",
-		danceEl: "headbang",
+		danceEl: "light",
 		danceTransIn: [1, 2],
-		danceSequence: [3, 4, 5, 4],
+		danceSequence: [1, 2, 3, 4, 3, 2, 1, 5, 6, 7, 6, 5],
 		danceTransOut: [2, 1],
 		danceSpeed: 500
 	},
@@ -142,9 +141,9 @@ var danceObjs = [
 		bbSong: "medium",
 		bbSongTempo: 300,
 		bbSongStrength: "1.1",
-		danceEl: "headbang",
+		danceEl: "medium",
 		danceTransIn: [1, 2],
-		danceSequence: [3, 4, 5, 4],
+		danceSequence: [1, 2, 3, 4, 5, 3],
 		danceTransOut: [2, 1],
 		danceSpeed: 300
 	},
@@ -154,9 +153,9 @@ var danceObjs = [
 		bbSong: "heavy",
 		bbSongTempo: 375,
 		bbSongStrength: "1.2",
-		danceEl: "headbang",
+		danceEl: "heavy",
 		danceTransIn: [1, 2],
-		danceSequence: [3, 4, 5, 4],
+		danceSequence: [1, 2, 3, 2],
 		danceTransOut: [2, 1],
 		danceSpeed: 200
 	}
